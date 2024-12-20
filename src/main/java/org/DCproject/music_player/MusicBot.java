@@ -1,14 +1,15 @@
-package org.example.functions;
+package org.DCproject.music_player;
 
-import net.dv8tion.jda.api.audio.AudioSendHandler;
-import net.dv8tion.jda.api.entities.Guild;
+import com.sedmelluq.discord.lavaplayer.player.AudioPlayer;
+import com.sedmelluq.discord.lavaplayer.player.AudioPlayerManager;
+import com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager;
+import com.sedmelluq.discord.lavaplayer.source.AudioSourceManagers;
 import net.dv8tion.jda.api.entities.channel.Channel;
-import net.dv8tion.jda.api.entities.channel.*;
-import net.dv8tion.jda.api.entities.channel.concrete.VoiceChannel;
 import net.dv8tion.jda.api.entities.channel.middleman.AudioChannel;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.managers.AudioManager;
+import org.DCproject.music_player.audio_functions.AudioPlayerSendHandler;
 
 public class MusicBot extends ListenerAdapter {
     @Override
@@ -25,11 +26,23 @@ public class MusicBot extends ListenerAdapter {
         Channel channel  = event.getMember().getVoiceState().getChannel();
         AudioManager audioManager = event.getGuild().getAudioManager();
 
+        //Get player
+        AudioPlayer player = getMusic();
+
         //Setting the music bot here
-        audioManager.setSendingHandler(null);
+        audioManager.setSendingHandler(new AudioPlayerSendHandler(player));
         // send the bot to the channel
         audioManager.openAudioConnection((AudioChannel) channel);
 
+    }
+
+    private AudioPlayer getMusic(){
+        AudioPlayerManager playerManager = new DefaultAudioPlayerManager();
+        AudioSourceManagers.registerRemoteSources(playerManager);
+
+        AudioPlayer player = playerManager.createPlayer();
+
+        return player;
     }
 
 
