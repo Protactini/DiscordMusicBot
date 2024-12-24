@@ -21,6 +21,9 @@ dependencies {
     implementation ("io.github.cdimascio:java-dotenv:5.2.2")
     testImplementation(platform("org.junit:junit-bom:5.9.1"))
     testImplementation("org.junit.jupiter:junit-jupiter")
+    // https://mvnrepository.com/artifact/com.typesafe/config
+    implementation("com.typesafe:config:1.4.2")
+
 
     implementation("net.dv8tion:JDA:5.2.1")
     // https://mvnrepository.com/artifact/com.jagrosh/jda-utilities
