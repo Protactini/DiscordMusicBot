@@ -4,7 +4,7 @@ import com.jagrosh.jdautilities.command.CommandClient;
 import com.jagrosh.jdautilities.command.CommandClientBuilder;
 import com.jagrosh.jdautilities.examples.command.AboutCommand;
 import net.dv8tion.jda.api.Permission;
-import org.DCproject.MainBotParameters;
+import org.DCproject.*;
 
 import java.awt.*;
 
@@ -12,7 +12,7 @@ import java.awt.*;
  * This class is used for building all CommandClient for this bot
  * Each big scoop should have its own CommandClient
  */
-public class BotClient {
+public class MusicBotClient {
 
     private final Permission[] RECOMMENDED_PERMS = new Permission[]{Permission.VIEW_CHANNEL, Permission.MESSAGE_SEND, Permission.MESSAGE_HISTORY, Permission.MESSAGE_ADD_REACTION,
         Permission.MESSAGE_EMBED_LINKS, Permission.MESSAGE_ATTACH_FILES, Permission.MESSAGE_MANAGE, Permission.MESSAGE_EXT_EMOJI,
