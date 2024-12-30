@@ -1,4 +1,4 @@
-package org.DCproject.music_player;
+package org.DCproject.musicplayer;
 
 public class MusicBotFunctions {
 }

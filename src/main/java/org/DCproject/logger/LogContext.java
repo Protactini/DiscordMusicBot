@@ -2,9 +2,14 @@ package org.DCproject.logger;
 
 public enum LogContext {
     Config ("config"),
+
     MusicBot("musicbot"),
+    MusicBotClient("musicbotclient"),
+    MusicBotFunctions("musicbotfunctions"),
+
     MainBot("mainbot"),
-    MainBotParameter("mainbotparameter");
+    MainBotParameter("mainbotparameter"),
+    MainBotStarter("mainbotstarter");
 
     private String description;
 

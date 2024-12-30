@@ -7,12 +7,17 @@ import java.nio.file.Path;
 
 import com.typesafe.config.*;
 import net.dv8tion.jda.api.OnlineStatus;
+import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.Activity;
 import org.DCproject.logger.BotLogger;
 import org.DCproject.logger.LogContext;
 import org.DCproject.logger.LogLevel;
 
 public class MainBotParameters {
+    //Permission for this Bot
+    public static final Permission[] RECOMMENDED_PERMS = new Permission[]{Permission.VIEW_CHANNEL, Permission.MESSAGE_SEND, Permission.MESSAGE_HISTORY, Permission.MESSAGE_ADD_REACTION,
+        Permission.MESSAGE_EMBED_LINKS, Permission.MESSAGE_ATTACH_FILES, Permission.MESSAGE_MANAGE, Permission.MESSAGE_EXT_EMOJI,
+        Permission.VOICE_CONNECT, Permission.VOICE_SPEAK, Permission.NICKNAME_CHANGE};
     // Parameter used for reading config of the main Bot (Conbination of different function bots)
     private final Config config;
     private final static LogContext CONTEXT = LogContext.Config;

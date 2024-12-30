@@ -2,12 +2,11 @@ package org.DCproject;
 import com.jagrosh.jdautilities.commons.waiter.EventWaiter;
 import com.typesafe.config.Config;
 import com.typesafe.config.ConfigFactory;
-import io.github.cdimascio.dotenv.Dotenv;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import org.DCproject.logger.BotLogger;
-import org.DCproject.music_player.MusicBot;
-import org.DCproject.music_player.MusicBotClient;
+import org.DCproject.musicplayer.MusicBot;
+import org.DCproject.musicplayer.MusicBotClient;
 
 import java.io.File;
 
@@ -26,7 +25,8 @@ public class Main {
                 .addEventListeners(
                     new EventWaiter(),
                     new MusicBotClient().createMusicCommandClient(mainBotParameters, "1.0.0"),
-                    new MusicBot())
+                    new MainBotStarter(botLogger),
+                    new MusicBot(botLogger))
                 .build();
     }
 }

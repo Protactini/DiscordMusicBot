@@ -1,4 +1,4 @@
-package org.DCproject.music_player.audio_functions;
+package org.DCproject.musicplayer.audiofunctions;
 
 import com.sedmelluq.discord.lavaplayer.player.AudioPlayer;
 import com.sedmelluq.discord.lavaplayer.track.playback.AudioFrame;
