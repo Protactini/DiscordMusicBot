@@ -26,4 +26,8 @@ public class BotLogger {
                 break;
         }
     }
+
+    public Logger getLogger(LogContext context) {
+        return LoggerFactory.getLogger(context.toString());
+    }
 }
