@@ -11,11 +11,12 @@ import org.DCproject.musicplayer.MusicBotClient;
 import java.io.File;
 
 public class Main {
+    public static final BotLogger botLogger = new BotLogger();
+
     public static void main(String[] args) {
         String token;
         File customConfigFile = new File("resources/config.env");
         Config config = ConfigFactory.parseFile(customConfigFile);
-        BotLogger botLogger = new BotLogger();
 
 
         MainBotParameters mainBotParameters = new MainBotParameters(config, botLogger);

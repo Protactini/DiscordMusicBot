@@ -11,7 +11,8 @@ public enum LogContext {
     MainBotParameter("mainbotparameter"),
     MainBotStarter("mainbotstarter"),
 
-    Setting("setting"),;
+    Setting("setting"),
+    SettingManager("settingmanager"),;
 
     private String description;
 
